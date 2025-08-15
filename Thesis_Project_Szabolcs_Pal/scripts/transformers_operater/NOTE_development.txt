@@ -1,0 +1,6 @@
+==================
+Within the transformers model runner fuctions ChatGPT was used to develop the following factors:
+-Overall structure of runner files
+-Feedback Generation during processing
+-Efficency optimalisation
+-==================

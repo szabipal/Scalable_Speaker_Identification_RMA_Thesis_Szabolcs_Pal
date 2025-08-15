@@ -1,0 +1,6 @@
+==================
+Within the transformers model runner fuctions ChatGPT was used to develop the following factors:
+-Suggestion of general layout of a NN training function
+-Suggestion of initial parameters
+-Code refactoring
+=================

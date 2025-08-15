@@ -1,0 +1,6 @@
+==============================
+Within the preprocessing fuctions ChatGPT was used to develop the following factors:
+-Efficiency optimalisation
+-Feedback generation during processing
+-Documentation
+==============================

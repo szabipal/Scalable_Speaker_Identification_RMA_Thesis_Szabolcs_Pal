@@ -1,0 +1,21 @@
+Top-1 Accuracy: 0.8771
+Avg prediction (top-1): 2.4788
+Min prediction (top-1): -4.7857
+Max prediction (top-1): 4.1539
+Overall label mean: 0.0179
+Prediction std dev: 1.5201
+
+Quantiles for all top predictions:
+  10%: 0.3860
+  25%: 1.6158
+  50%: 2.8732
+  75%: 3.6284
+  90%: 3.9647
+
+Avg prediction for correct top-1s: 2.7099
+Quantiles for correct top-1 predictions:
+  10%: 0.9123
+  25%: 2.0194
+  50%: 3.0601
+  75%: 3.6890
+  90%: 4.0333

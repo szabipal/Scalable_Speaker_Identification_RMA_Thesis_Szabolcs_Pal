@@ -1,0 +1,8 @@
+==============================
+Within the evaluator fuctions ChatGPT was used to develop the following factors:
+-Data loading
+-Feedback generation during processing
+-Efficiency optimalisation
+-Error resolution
+-Documentation refinement
+==============================

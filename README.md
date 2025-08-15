@@ -1,52 +1,59 @@
-# sample-thesis-project
-This repository is an example for the structure and content that a CLTL thesis project may have. 
-
-# Overview
-This repository assumes a Python project, with an Open License (MIT style). If any of these aspects are different from your project please make sure to change those accordingly.
-Please feel free to clone/fork this repository and use it as a template for your thesis.
-
-# Project structure
-
-```
-thesis-project
-└───data
-│       │   sample_data.csv 
-└───results
-│       │   sample_results.png 
-└───src
-│   └───utils
-│       │   plotting.py
-│   │   main.py
-│   .gitignore
-│   LICENSE
-│   README.md
-│   requirements.tx
-```
-
-# To Do
-Once you start, please go through the following steps to tailor this template to your project
-
-## Thesis report
-You may decide to upload your report here directly, or to simply add a reference to where the report is hosted (e.g. Overleaf)
-- [ ] Add a reference to the thesis report
-
-## Data 
-To ensure reproducibility, Yu need to provide the data your project uses.
-- [ ] Add your data in the data folder
-
-Sometimes, sharing sharing data is not straightforward. For example, there may be restrictions regarding with whom or how you can share the data you have. Some other times, the data you are using is open and easily accessible from other sites, in which case you might want to point directly to the original source. Either way, if this is the case for you please 
-- [ ] Add the data folder to ``.gitignore`` in order to avoid commiting these files to Github. For this you can simply uncomment the last line in the ``.gitignore`` file  
-```
-# Tailored ignored files
-data/*
-```
-- [ ] Make sure to add a ``README.md`` file inside the data folder, where you explain in detail how to obtain and structure the data
-
-## README
-- [ ] Add instructions on how to set up the project, how to run your code and what to expect as an output.
+## Setup
+Clone the repository and create the Conda environment:
+```bash
+git clone <REPO_URL>
+cd Thesis_Project_Szabolcs_Pal
+bash setup_env.sh
+# if you open a new shell later:
+conda activate ./my_local_env
 
 
+## Data (LibriSpeech)
+# Download the following from [OpenSLR #12](https://www.openslr.org/12):
+- `train-clean-100.tar.gz`
+- `train-clean-360.tar.gz`
+- `dev-clean.tar.gz`
 
+**Place the downloaded files in the `data/` folder** of this repository and extract them **there**. 
+# Example (macOS):
+```bash
+# from repo root
+mv ~/Downloads/train-clean-100.tar.gz data/
+mv ~/Downloads/train-clean-360.tar.gz data/
+mv ~/Downloads/dev-clean.tar.gz data/
+
+#Train the models
+#Run the ensemble (phonetic/spectral) pipeline, then the transformers pipeline:
+
+#bash
+PYTHONPATH=. python scripts/ensemble_operater/FINAL_PIPELINE_ENSEMBLE_MODELS.py
+PYTHONPATH=. python scripts/transformers_operater/111_RUN_TRANSFORMERS_PIPELINE.py
+
+
+## Repository layout
+
+```text
+
+scripts/                                # All runnable pipelines and utils
+├─ ensemble_operater/                   # Runs ensemble (phonetic/spectral) pipelines
+│  └─ __pycache__/                      
+├─ evaluation/                          # Metrics, error analysis, extractor functions
+│  └─ __pycache__/                      
+├─ grid_build/                          # Builds enrollment "grid" configs (e.g., 10s_10i, 20s_20i)
+├─ preprocessing/                       # Audio preprocessing + feature extraction                             
+│  └─ __pycache__/                      
+├─ training/                            # Training code for embedding/ensemble components
+│  └─ __pycache__/                      
+└─ transformers_operater/               # Pipelines for transformer-based models
+   └─ __pycache__/                      
+
+data/                                   # Put LibriSpeech archives/extracted folders here 
+
+my_datasets/                            # Dataset generation code for speaker embedding models
+└─ __pycache__/                         
+
+models/                                 # Neural network model files
+└─ __pycache__/                         
 
 
 
